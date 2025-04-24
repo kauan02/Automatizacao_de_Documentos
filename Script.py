@@ -1,6 +1,5 @@
 import json
 import os
-import shutil
 from openpyxl import load_workbook
 
 # Caminhos
@@ -44,13 +43,8 @@ substituicoes = {
     "EXECUCAO": str(execucao)
 }
 
-# Copia o modelo original com a imagem para o novo nome
-nome_arquivo = f"{info_doc['codigo']}_{revisao}.xlsx"
-caminho_saida = os.path.join(saida_dir, nome_arquivo)
-shutil.copy2(modelo_path, caminho_saida)  # Copia o arquivo preservando todos os dados, incluindo a imagem
-
-# Abre o modelo copiado
-wb = load_workbook(caminho_saida)
+# Abre o modelo
+wb = load_workbook(modelo_path)
 
 # Substituição nos textos das células
 for sheet in wb.worksheets:
@@ -62,7 +56,11 @@ for sheet in wb.worksheets:
                     if marcador in cell.value:
                         cell.value = cell.value.replace(marcador, valor)
 
-# Salva o arquivo final no mesmo caminho
+# Define nome do arquivo final
+nome_arquivo = f"{info_doc['codigo']}_{revisao}.xlsx"
+caminho_saida = os.path.join(saida_dir, nome_arquivo)
+
+# Salva arquivo final
 wb.save(caminho_saida)
 
 print(f"✅ Documento gerado com sucesso: {caminho_saida}")
