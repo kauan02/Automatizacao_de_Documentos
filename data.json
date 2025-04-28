@@ -53,5 +53,113 @@
                 }
             }
         }
+    },
+    "OIS002": {
+        "01":{
+            "nome_base": "Santiago/Camaçari 18''",
+            "nome_base_titulo": "SANTIAGO/CAMAÇARI 18''",
+            "estado": "",
+            "OT/SS/CC": "SS-TAG04-059",
+            "painel": "CP_PRPS_001",
+            "documentos": {
+                "07": {
+                "nome": "Lista de IO",
+                "codigo": "LI-4717.03-6521-862-RKW-001"
+                },
+                "09": {
+                "nome": "Procedimento TAF Painel",
+                "codigo": "PR-4717.03-6521-888-RKW-001"
+                },
+                "10": {
+                "nome": "Relatório de TAF do Painel",
+                "codigo": "RL-4717.03-6521-888-RKW-001"
+                },
+                "14": {
+                "nome": "Mapa de Comunicacao com o Equipamento",
+                "codigo": "LI-4717.03-6521-862-RKW-002"
+                },
+                "15": {
+                "nome": "Mapa de Comunicacao do CLP com cartão Prosoft",
+                "codigo": "LI-4717.03-6521-862-RKW-004"
+                },
+                "16": {
+                "nome": "Procedimento de TAF Software Aplicativo",
+                "codigo": "PR-4717.03-6521-862-RKW-001"
+                },
+                "17": {
+                "nome": "Relatorio de TAF Software Aplicativo",
+                "codigo": "RL-4717.03-6521-862-RKW-001"
+                },
+                "18": {
+                "nome": "Mapa de Comunicação SCADA",
+                "codigo": "LI-4717.03-6521-862-RKW-003"
+                },
+                "19": {
+                "nome": "IOM",
+                "codigo": "MA-4717.03-6521-862-RKW-001"
+                },
+                "20": {
+                "nome": "Procedimento de TAC",
+                "codigo": "PR-4717.03-6521-862-RKW-002"
+                },
+                "21": {
+                "nome": "Relatorio de TAC",
+                "codigo": "RL-4717.03-6521-862-RKW-002"
+                }
+            }
+        },
+        "02":{
+            "nome_base": "EDG Aratu",
+            "nome_base_titulo": "EDG ARATU",
+            "estado": "",
+            "OT/SS/CC": "SS-TAG04-008",
+            "painel": "CP_DGAT_001",
+            "documentos": {
+                "07": {
+                "nome": "Lista de IO",
+                "codigo": "LI-3135.01-6270-862-RKW-001"
+                },
+                "09": {
+                "nome": "Procedimento TAF Painel",
+                "codigo": "PR-3135.01-6270-888-RKW-001"
+                },
+                "10": {
+                "nome": "Relatório de TAF do Painel",
+                "codigo": "RL-3135.01-62701-888-RKW-001"
+                },
+                "14": {
+                "nome": "Mapa de Comunicacao com o Equipamento",
+                "codigo": "LI-3135.01-6270-862-RKW-002"
+                },
+                "15": {
+                "nome": "Mapa de Comunicacao do CLP com cartão Prosoft",
+                "codigo": "LI-3135.01-6270-862-RKW-004"
+                },
+                "16": {
+                "nome": "Procedimento de TAF Software Aplicativo",
+                "codigo": "PR-3135.01-6270-862-RKW-001"
+                },
+                "17": {
+                "nome": "Relatorio de TAF Software Aplicativo",
+                "codigo": "RL-3135.01-6270-862-RKW-001"
+                },
+                "18": {
+                "nome": "Mapa de Comunicação SCADA",
+                "codigo": "LI-3135.01-6270-862-RKW-003"
+                },
+                "19": {
+                "nome": "IOM",
+                "codigo": "MA-3135.01-6270-862-RKW-001"
+                },
+                "20": {
+                "nome": "Procedimento de TAC",
+                "codigo": "PR-3135.01-6270-862-RKW-002"
+                },
+                "21": {
+                "nome": "Relatorio de TAC",
+                "codigo": "RL-3135.01-6270-862-RKW-002"
+                }
+            }
+        }
     }
 }

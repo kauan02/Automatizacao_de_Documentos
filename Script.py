@@ -1,5 +1,6 @@
 import json
 import os
+import datetime
 from openpyxl import load_workbook
 
 # Caminhos
@@ -14,12 +15,14 @@ os.makedirs(saida_dir, exist_ok=True)
 with open(json_path, 'r', encoding='utf-8') as f:
     dados = json.load(f)
 
+# Pega a data atual
+data = datetime.date.today()
+
 # Entradas do usuário
-projeto = "OIS001"
+projeto = input("Escolha o projeto (opções: OIS001, OIS002): ")
 base = input("Número da base (ex: 06): ").zfill(2)
 arquivo = input("Número do arquivo (ex: 07): ").zfill(2)
 revisao = input("Revisão (ex: 1): ")
-data = input("Data (ex: 24/04/2025): ")
 execucao = input("Execução (ex: Kauan Barbosa -> K.B.): ").upper()
 
 # Busca dados no JSON
