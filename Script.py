@@ -60,7 +60,7 @@ if not modelo_path:
 ext = os.path.splitext(modelo_path)[1].lower()
 
 if ext == ".xlsx":
-    app = xw.App(visible=False)
+    app = xw.App(visible=True)
     wb = app.books.open(modelo_path)
 
     for sheet in wb.sheets:
@@ -84,19 +84,33 @@ if ext == ".xlsx":
     app.quit()
 
 elif ext == ".docx":
+    if not os.path.exists(modelo_path):
+        print(f"❌ Arquivo de modelo não encontrado em: {modelo_path}")
+        exit()
+    else:
+        print(f"📄 Modelo encontrado: {modelo_path}")
+
     doc = Document(modelo_path)
 
-    for p in doc.paragraphs:
-        for marcador, valor in substituicoes.items():
-            if marcador in p.text:
-                p.text = p.text.replace(marcador, valor)
+    def substituir_em_paragrafo(paragrafo, substituicoes):
+        for run in paragrafo.runs:
+            for marcador, valor in substituicoes.items():
+                if marcador in run.text:
+                    run.text = run.text.replace(marcador, valor)
 
-    for table in doc.tables:
-        for row in table.rows:
+    def substituir_em_tabela(tabela, substituicoes):
+        for row in tabela.rows:
             for cell in row.cells:
-                for marcador, valor in substituicoes.items():
-                    if marcador in cell.text:
-                        cell.text = cell.text.replace(marcador, valor)
+                for paragrafo in cell.paragraphs:
+                    substituir_em_paragrafo(paragrafo, substituicoes)
+
+
+    for paragrafo in doc.paragraphs:
+        substituir_em_paragrafo(paragrafo, substituicoes)
+
+
+    for tabela in doc.tables:
+        substituir_em_tabela(tabela, substituicoes)
 
     nome_arquivo = f"{info_doc['codigo']}_{revisao}.docx"
     caminho_saida = os.path.join(saida_dir, nome_arquivo)
